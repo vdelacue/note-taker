@@ -8,10 +8,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
     <link href="https://fonts.googleapis.com/css?family=Lato|Lobster|Lobster+Two|Oswald&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
     <link rel="stylesheet" href="assets/css/notes.css">
-    <title>Title</title>
+    <title>Note-Taker</title>
 </head>
-
 <body>
     <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="/">Note Taker
@@ -22,12 +24,13 @@
     </nav>
     <div class="container-fluid">
         <div class="row">
-            <div class="col-md-6 offset-md-3 list-container">
+            <div class="col-md-6 list-container">
                 <div class="card mt-4">
                     <div class="card-body">
                         <h5 class="card-title text-center">Add a New Note</h5>
                         <div class="form-group">
-                            <input type="text" class="form-control text-center note-title-text" placeholder="Enter Note Title">
+                            <input type="text" class="form-control text-center note-title-text"
+                                placeholder="Enter Note Title">
                         </div>
                         <div class="form-group">
                             <textarea class="form-control text-center note-body-text" placeholder="Enter Your Text Here"
@@ -39,31 +42,16 @@
                 <div class="card mt-4">
                     <ul class="list-group">
                         <li class="list-group-item">
-                            <div><span class="font-weight-bold">Vanessa's Diary</span><i
-                                    class="fas fa-trash-alt ml-2" id="delete-note-btn"></i></div>
+                            <div><span class="font-weight-bold">Vanessa's Diary</span><i class="fas fa-trash-alt ml-2"
+                                    id="delete-note-btn"></i></div>
                             <p class="mt-2">No peeking! </p>
-                        </li>
-                        <li class="list-group-item">
-                            <div><span class="font-weight-bold">Cosas en espanol</span><i
-                                    class="fas fa-trash-alt ml-2" id="delete-note-btn"></i></div>
-                            <p class="mt-2">no sabes lo que hay aqui</p>
-                        </li>
-                        <li class="list-group-item">
-                            <div><span class="font-weight-bold">Something</span><i
-                                    class="fas fa-trash-alt ml-2" id="delete-note-btn"></i></div>
-                            <p class="mt-2">blah blah poop</p>
-                        </li>
-                        <li class="list-group-item">
-                            <div><span class="font-weight-bold">Seinfeld Rules</span><i
-                                    class="fas fa-trash-alt ml-2" id="delete-note-btn"></i></div>
-                            <p class="mt-2">notes about nothing</p>
                         </li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.slim.min.js"></script>
+    <script type="text/javascript" src="assets/js/notes.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.15.0/umd/popper.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
