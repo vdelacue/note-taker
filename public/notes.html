@@ -7,28 +7,32 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0-11/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato|Lobster|Lobster+Two|Oswald&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/notes.css">
     <title>Title</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-light bg-light">
+    <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="/">Note Taker
         </a>
+        <form class="form-inline">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-light my-2 my-sm-0" id="search-note-btn" type="submit">Search</button>
     </nav>
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-6 offset-md-3 list-container">
                 <div class="card mt-4">
                     <div class="card-body">
-                        <h5 class="card-title">Save a Note</h5>
+                        <h5 class="card-title text-center">Add a New Note</h5>
                         <div class="form-group">
-                            <input type="text" class="form-control note-title" placeholder="Note Title">
+                            <input type="text" class="form-control text-center note-title-text" placeholder="Enter Note Title">
                         </div>
                         <div class="form-group">
-                            <textarea class="form-control note-textarea" placeholder="Enter Note Text"
+                            <textarea class="form-control text-center note-body-text" placeholder="Enter Your Text Here"
                                 rows="3"></textarea>
-                            <button class="btn btn-success mt-4 float-right save-note">Save Note</button>
+                            <button class="btn btn-dark mt-4 float-right" id="save-note-btn">Save Note</button>
                         </div>
                     </div>
                 </div>
@@ -36,22 +40,22 @@
                     <ul class="list-group">
                         <li class="list-group-item">
                             <div><span class="font-weight-bold">Vanessa's Diary</span><i
-                                    class="fas fa-trash-alt float-right text-danger delete-note"></i></div>
+                                    class="fas fa-trash-alt ml-2" id="delete-note-btn"></i></div>
                             <p class="mt-2">No peeking! </p>
                         </li>
                         <li class="list-group-item">
                             <div><span class="font-weight-bold">Cosas en espanol</span><i
-                                    class="fas fa-trash-alt float-right text-danger delete-note"></i></div>
+                                    class="fas fa-trash-alt ml-2" id="delete-note-btn"></i></div>
                             <p class="mt-2">no sabes lo que hay aqui</p>
                         </li>
                         <li class="list-group-item">
                             <div><span class="font-weight-bold">Something</span><i
-                                    class="fas fa-trash-alt float-right text-danger delete-note"></i></div>
+                                    class="fas fa-trash-alt ml-2" id="delete-note-btn"></i></div>
                             <p class="mt-2">blah blah poop</p>
                         </li>
                         <li class="list-group-item">
                             <div><span class="font-weight-bold">Seinfeld Rules</span><i
-                                    class="fas fa-trash-alt float-right text-danger delete-note"></i></div>
+                                    class="fas fa-trash-alt ml-2" id="delete-note-btn"></i></div>
                             <p class="mt-2">notes about nothing</p>
                         </li>
                     </ul>

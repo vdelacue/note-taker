@@ -1,0 +1,27 @@
+/* Main Content */
+body {
+    background-image: url(../images/plainBAckground.jpg);
+    background-size: cover;
+    font-family: 'Lobster', cursive;
+    font-size: 1.2rem;
+}
+
+p {
+    font-family: 'Oswald', sans-serif;
+}
+/* Cards and Note List Items */
+.card-body, h5, .card-title {
+    font-size: 1.2rem;
+}
+
+.card-body, li {
+    background-image: url(../images/smallerplainNote.jpeg);
+}
+
+li {
+    text-align: right;
+}
+
+nav {
+    font-size: 1.2rem;
+}

@@ -13,9 +13,11 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-var routes = require("./controller/notesController.js");
+const api_routes = require("./controller/api-routes.js");
+const html_routes = require("./controller/html-routes")
 
-app.use(routes);
+app.use(api_routes);
+app.use(html_routes);
 
   // Start our server so that it can begin listening to client requests.
 app.listen(PORT, function() {
