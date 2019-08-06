@@ -23,7 +23,7 @@ let displayNotes = function (notes) {
     let titleDiv = $("<div>");
     let titleSpan = $("<span class='font-weight-bold'>").text(note.title);
     let delBtn = $(`<i class='fas fa-trash-alt delete-note ml-2' data-id="${note.id}">`);
-    let noteP = $("<p class='mt-2'>").text(note.text);
+    let noteP = $("<p class='mt-2'>").text(note.body);
 
     titleDiv.append(titleSpan, delBtn);
 
@@ -43,11 +43,10 @@ let getJSONnotes = function () {
     displayNotes(data);
   });
 };
-
+//call function to get and display notes
 getJSONnotes();
 
 //---------------------DELETE A NOTE FROM DATABASE AND PAGE------------------------//
-
 // Delete the clicked note
 let handleNoteDelete = function (event) {
   // Prevent the click listener for the list from being called when the button inside of it is clicked
@@ -64,6 +63,8 @@ let handleNoteDelete = function (event) {
     location.reload();
   });
 };
+
+noteList.on("click", ".delete-note", handleNoteDelete);
 
 //---------------------------SAVE A NOTE AND POST TO PAGE----------------------//
 
@@ -83,36 +84,24 @@ console.log(newNote)
   });
 };
 
-//------------------------------SEARCH BUTTON RENDERS SINGLE PAGE WITH NOTE------------------//
+saveNoteBtn.on("click", handleNoteSave);
 
-$("#search-btn").on("click", function() {
-  var searchedNote = $("#note-search").val().trim();
+//------------------------------SEARCH BUTTON RENDERS SINGLE PAGE WITH NOTE------------------//
+let handleSearchNote = function(){
+  let searchedNote = $("#note-search").val().trim();
 
   // Using a RegEx Pattern to remove spaces from searchedCharacter
   // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
   searchedNote = searchedNote.replace(/\s+/g, "").toLowerCase();
-
-  $.get("/api/notes/" + searchedNote, function(data) {
-    console.log(data);
-    if (data) {
-      $("#title").text(data.title);
-      $("#body").text(data.body);
-    } else {
-      $("#title").text(
-        "Please check your spelling, your note was not found.");
-    }
+  $.ajax({
+    url: `/api/notes/${searchedNote}`,
+    method: "GET"
+  }).then(function (data) {
+    displayNotes(data);
   });
-});
+}
+
+searchNoteBtn.on("click", handleSearchNote)
 
 
-
-
-// searchNoteBtn.on("click", handleSearchNote)
-saveNoteBtn.on("click", handleNoteSave);
-noteList.on("click", ".delete-note", handleNoteDelete);
-
-// Gets and renders the initial list of notes
-// displayNotes();
-
-//export?
-});
+})

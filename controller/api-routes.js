@@ -18,8 +18,8 @@ api_routes.get("/api/notes", function (req, res) {
 });
 
 //get single note data according to id given in url
-api_routes.get("/api/notes/:id", function (req, res) {
-  let id = req.params.id;
+api_routes.get("/api/notes/:title", function (req, res) {
+  let id = req.params.title;
   let chosenNote = [];
   connection.query("SELECT * FROM notes", function (err, data) {
     if (err) {
