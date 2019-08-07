@@ -10,7 +10,7 @@ if (process.env.JAWSDB_URL) {
     host: "localhost",
     port: 3306,
     user: "root",
-    password: process.env.mysqlPass, // add your local password here.
+    password: "password", // add your local password here.
     database: "notetaker_db" // add your db name here
   });
 }

@@ -18,19 +18,23 @@ api_routes.get("/api/notes", function (req, res) {
 });
 
 //get single note data according to id given in url
-api_routes.get("/api/notes/:title", function (req, res) {
-  let id = req.params.title;
-  let chosenNote = [];
-  connection.query("SELECT * FROM notes", function (err, data) {
+api_routes.get("/api/notes/:searchTerms", function (req, res) {
+  
+  let searchParam = req.params.searchTerms
+  searchParam = searchParam.split(",")
+  
+  console.log(searchParam)
+  let queryString= `SELECT * FROM notes WHERE title LIKE "%${searchParam[0]}%"`;
+
+  for(let i = 1; i < searchParam.length; i++){
+    queryString += ` OR title LIKE "%${searchParam[i]}%"`
+  }
+  console.log(queryString);
+  connection.query(queryString, function (err, data) {
     if (err) {
       return res.status(500).end();
     }
-    for (var i = 0; i < data.length; i++) {
-      if (data[i].id === id) {
-        chosenNote.push(data[i]);
-      }
-    }
-    return res.json(chosenNote);
+    return res.json(data);
   })
 });
 
