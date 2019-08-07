@@ -1,7 +1,8 @@
 /* Main Content */
 body {
     background-image: url(../images/plainBAckground.jpg);
-    background-size: cover;
+    background-size: 100%;
+    background-repeat: no-repeat;
     font-family: 'Lobster', cursive;
     font-size: 1.2rem;
 }
